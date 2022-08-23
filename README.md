@@ -59,6 +59,15 @@ docker-compose run --rm app  sh -c "python manage.py test"
 docker-compose run --rm app  sh -c "flake8"
 ```
 
+## Logging
+
+⚡ **Used a Model called StockRequest to track requests, it can be checked from Admin**
+
+
+## Throttling
+
+⚡ **30/min for anon users and 60/min for authenticated users setup in app/settings and added to each view (healthcheck endpoint does not have throttling enabled)**
+
 ## Developers
 
 👤 **Zayter Munive**

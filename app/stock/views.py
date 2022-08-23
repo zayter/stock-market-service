@@ -26,6 +26,8 @@ from stock import (
 
 from stock.services import StockService
 
+from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
+
 
 @extend_schema_view(
     retrieve=extend_schema(
@@ -40,6 +42,7 @@ from stock.services import StockService
 )
 class StockViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.StockSerializer
+    throttle_classes = [UserRateThrottle, AnonRateThrottle]
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
