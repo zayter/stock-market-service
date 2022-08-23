@@ -1,7 +1,7 @@
 
-from django.conf import settings
 import requests
 from requests.exceptions import HTTPError
+import os
 
 from . import (
     StockMapper,
@@ -14,7 +14,7 @@ from stock.exceptions import (
 
 
 class StockService:
-    api_key = settings.API_KEY
+    api_key = os.environ['API_KEY']
     base_url = 'https://www.alphavantage.co'
     function = 'TIME_SERIES_DAILY'
 
