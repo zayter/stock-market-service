@@ -1,8 +1,11 @@
 <h1 align="center">Stock Market API Service 💸</h1>
 
 
-### ✨ [Admin Panel](http://example.com/admin)
-### ✨ [Swagger API Documentation](http://example.com/api/docs)
+### ✨ [Admin Panel](http://ec2-107-21-86-77.compute-1.amazonaws.com/admin)
+### ✨ [Swagger API Documentation](http://ec2-107-21-86-77.compute-1.amazonaws.com/api/docs)
+
+## SuperAdmin Credentials in AWS instance
+admin@example.com/eurekalabs-io
 
 <br/>
 
