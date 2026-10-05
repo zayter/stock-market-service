@@ -53,7 +53,13 @@ class StockViewSet(viewsets.ReadOnlyModelViewSet):
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
-        StockRequest.objects.create(user=self.request.user, symbol=pk)
-        stock = StockService(pk, self.request.query_params).retrieve()
+        serializer = serializers.StockRequestSerializer(
+            data={'symbol': pk}
+        )
+        serializer.is_valid(raise_exception=True)
+        serializer.save(user=request.user)
+    
+        stock = StockService(pk, request.query_params).retrieve()
         serializer = serializers.StockSerializer(instance=stock)
+    
         return Response(serializer.data)
